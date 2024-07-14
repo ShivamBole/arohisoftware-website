@@ -178,12 +178,12 @@ function Navbar({ className }: { className?: string }) {
                     </HoveredLink>
 
                     <HoveredLink href="/contact">
-                      <span className="text-sm pt-2 text-slate-400 hover:text-yellow-500 cursor-pointer">
+                      <span className="hover:border-b-4 animate-in hover:text-blue-400 border-neutral-100 border-y-gray-400">
                         Contact Us
                       </span>
                     </HoveredLink>
                     <HoveredLink href="/faq">
-                      <span className="text-sm text-slate-400 hover:text-yellow-500 cursor-pointer">
+                      <span className="hover:border-b-4 animate-in hover:text-blue-400 border-neutral-100 border-y-gray-400">
                         FAQ
                       </span>
                     </HoveredLink>

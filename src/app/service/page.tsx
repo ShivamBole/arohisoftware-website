@@ -6,6 +6,9 @@ import Footer from "../components/Footer";
 import Feedform from "../components/Feedform";
 import Partners from "../components/Partners";
 
+// Import the local image
+import heroImage from "./../../../public/assets/services/servivepageherosection.avif";
+import beliefPowerBusinessImage from "./../../../public/assets/services/servicespagesecondsection.avif"
 
 function Service() {
   return (
@@ -13,8 +16,7 @@ function Service() {
       <div
         className="relative h-screen bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1611095567219-8fa7d4d8bf48?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+          backgroundImage: `url('${heroImage.src}')`,
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
@@ -72,7 +74,7 @@ function Service() {
           </div>
           <div className="lg:w-1/2">
             <img
-              src="https://plus.unsplash.com/premium_photo-1681995453325-455f7084888d?q=80&w=2039&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={beliefPowerBusinessImage.src}
               alt="People high-fiving"
               className="w-full rounded-lg shadow-lg"
             />
@@ -84,7 +86,7 @@ function Service() {
       </div>
 
       <ServiceCard />
-      <Partners/>
+      <Partners />
       <Feedform title="business with Arohi Software" />
       <Footer />
     </div>

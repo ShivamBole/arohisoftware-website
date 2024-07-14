@@ -32,21 +32,14 @@ const SharedButton: React.FC<SharedButtonProps> = ({ className, children }) => (
 
 const event = [
   {
-    title: "FutureFest 2024: Unleashing Tomorrow's Innovations",
-    date: "February 3, 2024",
-    time: "10:00 AM - 8:00 PM",
-    address: "Pune, Maharashtra",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repellat obcaecati commodi! Aperiam itaque ad, facere quaerat eum, provident rerum beatae obcaecati laudantium incidunt ipsum ipsa neque.",
-    imageUrl: "https://images.unsplash.com/photo-1559223607-b4d0555ae227?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    title: "FutureFest 2024: Unleashing Tomorrow's Innovations",
-    date: "February 3, 2024",
-    time: "10:00 AM - 8:00 PM",
-    address: "Pune, Maharashtra",
-    description: "Quaerat beatae excepturi rem amet placeat dolor perferendis, id aut error voluptatem ratione?. Perspiciatis dicta. Maxime dolores, atque accusantium molestias assumenda, explicabo, consequatur nemo distinctio dolore ex fugiat quis quidem natus iusto!",
+    title: "Project Competition 2024: Showcasing Innovation in Arohi Software",
+    date: "April 15, 2024",
+    time: "9:00 AM - 6:00 PM",
+    address: "Online Event",
+    description: "Join us for a day of innovation and creativity as teams from Arohi Software compete to showcase their projects. This event aims to foster collaboration and celebrate the spirit of innovation within our organization.",
     imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  }
+  },
+  
 ]
 function EventPage() {
   const images = [

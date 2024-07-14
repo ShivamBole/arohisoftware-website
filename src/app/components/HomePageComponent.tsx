@@ -1,4 +1,4 @@
-import React from 'react';
+"use client"
 import Image from "next/image";
 
 const HomePageComponent: React.FC = () => {
@@ -10,7 +10,7 @@ const HomePageComponent: React.FC = () => {
       <div className="flex flex-wrap lg:justify-evenly lg:my-20 mx-auto">
         <div>
           <Image 
-            src="/assets/homepage/Homepagethirdcomponent.avif" // Path to your local image file
+            src="/assets/homepage/Homepagethirdcomponent.avif"
             alt="VR Image" 
             className="lg:h-[60vh] lg:w-[80vh]"
             width={800}  // Add appropriate width

@@ -12,6 +12,7 @@ import {
 } from "@/app/components/ui/carousel";
 import Card from "@/app/components/Card";
 import TestimonialCards from "@/app/components/TestimonialCards";
+import CollegesPartners from "./components/Colleges";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
 
 import Footer from "@/app/components/Footer";
@@ -30,10 +31,11 @@ export default function Home() {
     <div className=" relative overflow-hidden">
       <HeroSection />
       <HomepageCard />
-      <HomePageComponent/>
+      <HomePageComponent />
       <WhyChooseUs />
       <Servicecard />
       <OurPartners />
+      <CollegesPartners />
       <CareersComponent />
       <Feedform title="Business With Arohi Software " />
       <TestimonialCards />

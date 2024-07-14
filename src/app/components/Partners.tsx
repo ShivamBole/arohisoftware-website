@@ -1,6 +1,7 @@
 import React from 'react';
 import "./OurPartners.css";
 
+import Gowaza from "./../../../public/assets/gowaza.jpg"
 const companies = [
   {
     id: 1,
@@ -13,6 +14,11 @@ const companies = [
     logo: 'https://media.licdn.com/dms/image/D560BAQHGYF5tCSi_uQ/company-logo_200_200/0/1695197584351?e=2147483647&v=beta&t=s2DN3cuT_ej1GYgKNRvHj4ttOXgHv3uAsLQ6hObjQm4',
   },
   {
+    id: 4,
+    name: 'GROWAZA ',
+    logo: Gowaza.src,
+  },
+  {
     id: 1,
     name: 'VS Tech Horizon',
     logo: 'https://yt3.googleusercontent.com/DhdYxWD2LwcnzHdPBIBtrKq8M2AHL39yekLoalqR09vX18rKX29GYfJaIW2FUaGjUbZ70sLxSg=s176-c-k-c0x00ffffff-no-rj',
@@ -23,6 +29,11 @@ const companies = [
     logo: 'https://media.licdn.com/dms/image/D560BAQHGYF5tCSi_uQ/company-logo_200_200/0/1695197584351?e=2147483647&v=beta&t=s2DN3cuT_ej1GYgKNRvHj4ttOXgHv3uAsLQ6hObjQm4',
   },
   {
+    id: 4,
+    name: 'GROWAZA ',
+    logo: Gowaza.src,
+  },
+  {
     id: 1,
     name: 'VS Tech Horizon',
     logo: 'https://yt3.googleusercontent.com/DhdYxWD2LwcnzHdPBIBtrKq8M2AHL39yekLoalqR09vX18rKX29GYfJaIW2FUaGjUbZ70sLxSg=s176-c-k-c0x00ffffff-no-rj',
@@ -33,6 +44,11 @@ const companies = [
     logo: 'https://media.licdn.com/dms/image/D560BAQHGYF5tCSi_uQ/company-logo_200_200/0/1695197584351?e=2147483647&v=beta&t=s2DN3cuT_ej1GYgKNRvHj4ttOXgHv3uAsLQ6hObjQm4',
   },
   {
+    id: 4,
+    name: 'GROWAZA ',
+    logo: Gowaza.src,
+  },
+  {
     id: 1,
     name: 'VS Tech Horizon',
     logo: 'https://yt3.googleusercontent.com/DhdYxWD2LwcnzHdPBIBtrKq8M2AHL39yekLoalqR09vX18rKX29GYfJaIW2FUaGjUbZ70sLxSg=s176-c-k-c0x00ffffff-no-rj',
@@ -41,6 +57,11 @@ const companies = [
     id: 4,
     name: 'GrowAro TNP',
     logo: 'https://media.licdn.com/dms/image/D560BAQHGYF5tCSi_uQ/company-logo_200_200/0/1695197584351?e=2147483647&v=beta&t=s2DN3cuT_ej1GYgKNRvHj4ttOXgHv3uAsLQ6hObjQm4',
+  },
+  {
+    id: 4,
+    name: 'GROWAZA ',
+    logo: Gowaza.src,
   },
 ];
 
