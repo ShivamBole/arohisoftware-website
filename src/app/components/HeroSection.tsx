@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import { Vortex } from "./ui/vortex";
@@ -19,7 +20,7 @@ function HeroSection() {
           <div className="relative flex flex-col lg:flex-row items-center justify-center lg:space-x-[120px] h-full w-full bg-transparent">
             <div className="flex flex-col justify-center items-center lg:w-1/2 w-full p-4 lg:p-8 ">
               <div className="text-5xl lg:text-7xl font-bold text-neutral-600 dark:text-neutral-400 text-nowrap">
-                Let&apos;s
+                Let's
                 <FlipWords words={words} />
               </div>
               <code className="font-semibold text-green-600 text-sm lg:text-2xl mt-4">

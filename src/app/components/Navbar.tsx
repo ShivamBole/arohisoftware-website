@@ -5,19 +5,95 @@ import { cn } from "@/utils/cn";
 import logo from "../../../public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
+import { FaUserCircle } from "react-icons/fa";
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const { data: session } = useSession();
 
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
 
+  const handleProfileClick = () => {
+    setIsProfileMenuOpen(!isProfileMenuOpen);
+  };
+
+  function stringToColor(string: string): string {
+    let hash = 0;
+    for (let i = 0; i < string.length; i++) {
+      hash = string.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    let color = '#';
+    for (let i = 0; i < 3; i++) {
+      const value = (hash >> (i * 8)) & 0xff;
+      color += ('00' + value.toString(16)).substr(-2);
+    }
+    return color;
+  }
+  
+  function getInitials(name: string): string {
+    const names = name.split(' ');
+    const initials = names.map((n) => n[0]).join('');
+    return initials.toUpperCase();
+  }
+
+  const userInitials = session?.user?.name ? getInitials(session.user.name) : '';
+  const bgColor = session?.user?.name ? stringToColor(session.user.name) : '#ccc';
+
+
   return (
     <div className={cn("fixed top-0 inset-x-0 z-50 w-full", className)}>
       <nav className="bg-black w-full">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        
+        <div className="lg:hidden sm:flex md:flex px-8">
+            {session?.user ? (
+              <div className="relative">
+                <button
+                  className="text-white focus:outline-none"
+                  onClick={handleProfileClick}
+                >
+                  <FaUserCircle size={24} />
+                </button>
+                {isProfileMenuOpen && (
+                 <div className="absolute lg:right-0 mt-2 w-50 bg-[#282828] shadow-md rounded-md">
+                 <div className="flex space-x-3 p-4 pb-5">
+                   <div className="flex items-center space-x-4">
+                     <button className="flex items-center justify-center w-10 h-10 rounded-full"
+               style={{ backgroundColor: bgColor }}>
+                     <span className="text-white font-semibold">
+                 {userInitials}
+               </span>
+                     </button>
+                   </div>
+                   <div className=" space-y-1">
+                      <p className="text-sm font-semibold ">{session.user.name}</p>
+                   <p className="text-xs text-gray-500">{session.user.email}</p>
+                   </div>
+                 </div>
+                 <div className="border-lg border-gray-200">
+                   <button
+                     className="w-full text-left px-4 py-2 text-sm text-white bg-purple-600  hover:font-bold hover:bg-purple-800"
+                     onClick={() => signOut()}
+                   >
+                     Logout
+                   </button>
+                 </div>
+               </div>
+                )}
+              </div>
+            ) : (
+              <Link href="/login">
+                <button className="text-white focus:outline-none">Login</button>
+              </Link>
+            )}
+          </div>
+
+
           <div className="flex items-center">
             <Link href="/">
               <Image src={logo} alt="Logo" className="w-16 h-16" />
@@ -193,11 +269,48 @@ function Navbar({ className }: { className?: string }) {
             </Menu>
           </div>
 
-          {/* Login button */}
-          <div className="hidden lg:block px-8">
-            <Link href="/login">
-              <button className="text-white focus:outline-none">Login</button>
-            </Link>
+          {/* Login button or profile button */}
+          <div className="hidden lg:flex px-8">
+            {session?.user ? (
+              <div className="relative">
+                <button
+                  className="text-white focus:outline-none"
+                  onClick={handleProfileClick}
+                >
+                  <FaUserCircle size={24} />
+                </button>
+                {isProfileMenuOpen && (
+                  <div className="absolute lg:right-0 mt-2 w-50 bg-[#282828] shadow-md rounded-md">
+                  <div className="flex space-x-3 p-4 pb-5">
+                    <div className="flex items-center space-x-4">
+                      <button className="flex items-center justify-center w-10 h-10 rounded-full"
+                style={{ backgroundColor: bgColor }}>
+                      <span className="text-white font-semibold">
+                  {userInitials}
+                </span>
+                      </button>
+                    </div>
+                    <div className=" space-y-1">
+                       <p className="text-sm font-semibold ">{session.user.name}</p>
+                    <p className="text-xs text-gray-500">{session.user.email}</p>
+                    </div>
+                  </div>
+                  <div className="border-lg border-gray-200">
+                    <button
+                      className="w-full text-left px-4 py-2 text-sm text-white bg-purple-600  hover:font-bold hover:bg-purple-800"
+                      onClick={() => signOut()}
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </div>
+                )}
+              </div>
+            ) : (
+              <Link href="/login">
+                <button className="text-white focus:outline-none">Login</button>
+              </Link>
+            )}
           </div>
 
           {/* Search Icon and Burger icon for small screens */}
@@ -225,9 +338,6 @@ function Navbar({ className }: { className?: string }) {
             </div>
 
             <div className="block lg:hidden space-x-4">
-              <Link href="/login">
-                <button className="text-white focus:outline-none">Login</button>
-              </Link>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white focus:outline-none"

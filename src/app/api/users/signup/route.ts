@@ -1,50 +1,49 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { connect } from "@/dbConfig/dbConfig";
-import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import { sendEmail } from "@/helpers/mailer";
-
-connect();
+import { User } from "@/models/userModel";
+import { connect } from "@/utils";
 
 export async function POST(request: NextRequest) {
   try {
+    // Parsing the request body
     const reqBody = await request.json();
+    const { name, email, password } = reqBody;
 
-    const { fname, lname, email, password } = reqBody;
+    console.log("Request body:", reqBody);
 
-    console.log(reqBody);
+    // Establishing a connection with the database
+    await connect();
+    console.log("Connected to database");
 
-    //check if user already exists
-    const user = await User.findOne({ email });
-
-    if (user) {
+    // Check if user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      console.log("User already exists");
       return NextResponse.json(
         { error: "User already exists" },
         { status: 400 }
       );
     }
 
-    //hash password
+    // Hashing the password
     const salt = await bcryptjs.genSalt(10);
     const hashedPassword = await bcryptjs.hash(password, salt);
+    console.log("Password hashed");
 
-    const newUser = new User({
-      fname,
-
-      lname,
-
+    // Creating a new user
+    const savedUser = await User.create({
+      name,
       email,
       password: hashedPassword,
     });
+    console.log("User created:", savedUser);
 
-    const savedUser = await newUser.save();
-    console.log(savedUser);
-
-    //send verification email
-
+    // Sending verification email
     await sendEmail({ email, emailType: "VERIFY", userId: savedUser._id });
+    console.log("Verification email sent");
 
     return NextResponse.json({
       message: "User created successfully",
@@ -52,6 +51,7 @@ export async function POST(request: NextRequest) {
       savedUser,
     });
   } catch (error: any) {
+    console.error("Error in POST /api/users:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
