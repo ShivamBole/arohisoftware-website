@@ -1,13 +1,10 @@
-
-"use client"
+"use client";
 import React from "react";
 import SecurityCard from "@/app/components/SecurityCard";
 import Footer from "@/app/components/Footer";
 import CyberSecurityCard from "../components/CyberSecurityCard";
 import Image from "next/image";
 import Feedform from "../components/Feedform";
-
-
 
 const page = () => {
   return (
@@ -17,8 +14,7 @@ const page = () => {
       <div
         className="sm:h-[85vh] h-52 w-full pt-7 relative"
         style={{
-          backgroundImage:
-            "url('/sbg1.png')",
+          backgroundImage: "url('/sbg1.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -136,8 +132,6 @@ const page = () => {
               title="Enterprise Security Strategy"
               width={80}
               height={80}
-              
-              
             />
 
             <SecurityCard
@@ -160,7 +154,7 @@ const page = () => {
             <SecurityCard
               images="/s4.png"
               altText="this is img"
-              text="Deliver end-to-end IAM from assessment to strategic roadmaps and execution. Xoriant provides comprehensive solutions in multi-factor authentication, authorization, identity protection, SOC2, and privilege access management"
+              text="Deliver end-to-end IAM from assessment to strategic roadmaps and execution. Arohi Software provides comprehensive solutions in multi-factor authentication, authorization, identity protection, SOC2, and privilege access management"
               title="Identity and Access Management"
               width={80}
               height={80}
@@ -184,45 +178,61 @@ const page = () => {
             <SecurityCard
               images="/s7.png"
               altText="this is img"
-              text="Enhance threat detection and response with Xoriant's unified Security Operations Center, bolstering cybersecurity across technologies and compliance"
+              text="Enhance threat detection and response with Arohi Software unified Security Operations Center, bolstering cybersecurity across technologies and compliance"
               title="Security Operation Center"
               width={80}
               height={80}
             />
           </div>
           <div className="text-left mt-28 container">
-  <h4 className="text-green-600 text-l">Accelators In The House</h4>
-  <h2 className="text-black-600 text-3xl">Frameworks for Robust Managed IT Security Services</h2>
-  
-  <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-    <div className="card bg-pink-700 p-6 rounded-lg shadow-md transition-all duration-500">
-      <h3 className="text-xl font-bold mb-4 text-white">Security as Code</h3>
-      <p className="text-gray-100">involves embedding security practices within the software development lifecycle using code. </p>
-    </div>
-    <div className="card bg-green-500 p-6 rounded-lg shadow-md transition-all duration-500">
-      <h3 className="text-xl font-bold mb-4 text-white">Securing SDLC in Cloud</h3>
-      <p className="text-gray-100">Securing the Software Development Life Cycle (SDLC) in a cloud environment is crucial to </p>
-    </div>
-    <div className="card bg-sky-500 p-6 rounded-lg shadow-md transition-all duration-500">
-      <h3 className="text-xl font-bold mb-4 text-white">Roadmap Zero-Trust Access management</h3>
-      <p className="text-gray-100">Implementing a Zero Trust Access Management (ZTAM) roadmap involves a strategic  </p>
-    </div>
-    <div className="card bg-blue-900 text-white p-6 rounded-lg shadow-md transition-all duration-500">
-      <h3 className="text-xl font-bold mb-4 text-white">Learning Solutions</h3>
-      <p className="text-gray-300">When it comes to learning solutions, especially in the context of professional development or organizational training,
+            <h4 className="text-green-600 text-l">Accelators In The House</h4>
+            <h2 className="text-black-600 text-3xl">
+              Frameworks for Robust Managed IT Security Services
+            </h2>
 
-</p>
-    </div>
-  </div>
-</div>
-
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+              <div className="card bg-pink-700 p-6 rounded-lg shadow-md transition-all duration-500">
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  Security as Code
+                </h3>
+                <p className="text-gray-100">
+                  involves embedding security practices within the software
+                  development lifecycle using code.{" "}
+                </p>
+              </div>
+              <div className="card bg-green-500 p-6 rounded-lg shadow-md transition-all duration-500">
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  Securing SDLC in Cloud
+                </h3>
+                <p className="text-gray-100">
+                  Securing the Software Development Life Cycle (SDLC) in a cloud
+                  environment is crucial to{" "}
+                </p>
+              </div>
+              <div className="card bg-sky-500 p-6 rounded-lg shadow-md transition-all duration-500">
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  Roadmap Zero-Trust Access management
+                </h3>
+                <p className="text-gray-100">
+                  Implementing a Zero Trust Access Management (ZTAM) roadmap
+                  involves a strategic{" "}
+                </p>
+              </div>
+              <div className="card bg-blue-900 text-white p-6 rounded-lg shadow-md transition-all duration-500">
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  Learning Solutions
+                </h3>
+                <p className="text-gray-300">
+                  When it comes to learning solutions, especially in the context
+                  of professional development or organizational training,
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        
-       
       </div>
-      <Feedform title=""/>
+      <Feedform title="" />
       <Footer />
-
 
       <style jsx>{`
         .card {
@@ -231,7 +241,7 @@ const page = () => {
         }
 
         .card::before {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           bottom: 0;
@@ -252,8 +262,6 @@ const page = () => {
           z-index: 2;
         }
       `}</style>
-
-      
     </div>
   );
 };

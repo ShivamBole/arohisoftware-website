@@ -7,10 +7,10 @@ function CyberSecurityCard() {
         <div className="flex-1 p-4">
           <h2 className="text-3xl font-bold mb-4 text-gray-800">360° Cyber Resiliency</h2>
           <p className="text-gray-700 mb-4 font-semibold">
-            Why invest on reactive threat mitigation, when managed Cyber Security Services help proactively prevent threats?
+            Why invest on reactive threat mitigation`&rsquo;` when managed Cyber Security Services help proactively prevent threats?
           </p>
           <p className="text-gray-700 mb-4">
-            Effective security and compliance are crucial for safeguarding business assets, customer data, and reputation. Despite the relentless stream of attacks, Xoriant&apos;s extensive security expertise and continuous adoption of innovative tools empower us to shield your assets—be it legacy systems, cloud-native infrastructure, or mobile apps. Count on us to eliminate both existing and potential vulnerabilities, enabling your business to stay secure.
+            Effective security and compliance are crucial for safeguarding business assets`&rsquo;` customer data`&rsquo;` and reputation. Despite the relentless stream of attacks`&rsquo;` Xoriant`&apos;`s extensive security expertise and continuous adoption of innovative tools empower us to shield your assets—be it legacy systems`&rsquo;` cloud-native infrastructure`&rsquo;` or mobile apps. Count on us to eliminate both existing and potential vulnerabilities`&rsquo;` enabling your business to stay secure.
           </p>
         </div>
         <div className="flex-1 p-4 flex justify-center items-center">

@@ -96,7 +96,7 @@ import { SignupForm } from "../components/Form"
 
 function page() {
   return (
-    <div className="mt-24">
+    <div className="pt-16">
      <SignupForm/>
     </div>
   )

@@ -1,14 +1,8 @@
-"use client"; // Add this line to ensure this component is a client component
-
+"use client"
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import { FaMapLocationDot } from "react-icons/fa6";
-import { MdAttachEmail } from "react-icons/md";
-import { CgPhone } from "react-icons/cg";
-import { IoLocation } from "react-icons/io5";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { MdEmail, MdPhone } from "react-icons/md";
 import Footer from "../components/Footer";
-const inputClasses = "w-full p-2 rounded bg-gray-700";
-const flexClasses = "flex items-center mb-2";
-const imgClasses = "mr-2";
 
 interface FormData {
   firstName: string;
@@ -17,15 +11,7 @@ interface FormData {
   phone: string;
   message: string;
 }
-const sharedClasses = {
-  heading: "text-3xl font-bold mb-4",
-  subHeading: "text-lg",
-  phoneNumber: "text-2xl font-bold mb-2",
-  paragraph: "mb-4",
-  flexCol: "flex flex-col justify-around md:flex-row md:space-x-8",
-  link: "text-blue-600 flex items-center",
-  image: "mr-2",
-};
+
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -48,138 +34,141 @@ const ContactForm: React.FC = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(formData);
+    // Add logic to submit form data here
   };
 
   return (
-    <div>
-
-<div className="max-w-7xl mx-auto p-6 mt-12">
-        <h1 className="text-4xl font-bold mb-4">Contact Arohi</h1>
-        <p className="mb-12">
-          We appreciate your interest in Arohi. Please select the
-          method below to contact us.
+    <div className="min-h-screen bg-gray-100">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-bold mb-6 text-center">Contact Arohi</h1>
+        <p className="text-lg text-center text-black mb-12">
+          We appreciate your interest in Arohi. Please select the method below to contact us.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="col-span-2">
-            <h2 className={`${sharedClasses.heading} text-3xl`}>General Inquiries</h2>
-            <div className={sharedClasses.flexCol}>
-              <div className="mb-4 md:mb-0">
-                <p className={sharedClasses.phoneNumber}>+912240443934</p>
-                <p className={sharedClasses.subHeading}>Toll-free from India</p>
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <h2 className="text-2xl text-black font-bold mb-4">General Inquiries</h2>
+              <div className="flex items-center mb-4">
+                <MdPhone className="text-2xl text-purple-600 mr-2" />
+                <div>
+                  <p className="font-bold text-black">+91 7517861332</p>
+                  <p className="text-gray-600">Toll-free from India</p>
+                </div>
               </div>
-              <div>
-                <p className={sharedClasses.phoneNumber}>+6566778139</p>
-                <p className={sharedClasses.phoneNumber}>+6566778140</p>
-                <p className={sharedClasses.subHeading}>
-                  Outside the United States and Canada
-                </p>
+              <div className="flex items-center">
+                <FaMapMarkerAlt className="text-2xl text-purple-600 mr-2" />
+                <div>
+                  <p className="font-bold text-black">Arohi Software Development</p>
+                  <p className="text-gray-600">Near Sai hospital building, Bhairavnath Chawk, Shrigoanda, Maharashtra</p>
+                </div>
               </div>
             </div>
           </div>
-          <div className="mt-4">
-            <h2 className={sharedClasses.heading}>Find A Location</h2>
-            <p className={sharedClasses.paragraph}>
-              View a list of local Accenture office information.
+          <div className="bg-white rounded-lg p-6 shadow-md">
+            <h2 className="text-2xl font-bold text-black mb-4">Find A Location</h2>
+            <p className="text-gray-600 mb-4">
+              View a list of local Arohi Software office information.
             </p>
-            <a href="#" className={sharedClasses.link}>
-              <IoLocation
-              />
+            <a href="#" className="text-blue-600 flex items-center">
+              <FaMapMarkerAlt className="text-xl mr-2" />
               Find office locations
             </a>
           </div>
         </div>
       </div>
 
-
-
-      <div className=" min-h-screen text-white flex items-center justify-center lg:mt-0 mt-10 p-4">
-        <div className="bg-zinc-900 rounded-lg lg:h-[85vh] h-fit gap-2 mt-20 shadow-lg w-full max-w-4xl flex  flex-col md:flex-row">
+      <div className="bg-gray-900 py-12 lg:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto bg-zinc-800 rounded-lg p-8 md:flex items-center gap-8 shadow-lg">
           <div
-            className="p-8 md:w-1/2 rounded-lg content-center font-serif bg-zinc-800"
+            className="md:w-1/2 mb-8 md:mb-0"
             style={{
-              backgroundImage:
-                "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDI1rtrX5rNMVLUpRhlMKNDmaFZiqgyaoXwg&s')",
+              backgroundImage: "url('https://via.placeholder.com/800x600')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
+              minHeight: "300px",
+              borderRadius: "10px",
             }}
           >
+          </div>
+          <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-4">Get in touch</h2>
-            <p className="mb-4">
-              Proin volutpat consequat porttitor cras nullam gravida at. Orci
-              molestie a eu arcu. Sed ut tincidunt integer elementum id sem.
-              Arcu sed malesuada et magna.
+            <p className="text-gray-600 mb-4">
+            We welcome your interest in Arohi Software. Whether you have questions, want to discuss potential projects, or simply wish to connect, we`&apos;`re here to assist you. Reach out to us using the contact details below, and let`&apos;`s start a conversation.
             </p>
             <div className="mb-4">
-              <div className={flexClasses}>
-                <FaMapLocationDot className={imgClasses} />
-                <span>545 Mavis Island, Chicago, IL 99991</span>
+              <div className="flex items-center mb-2">
+                <MdPhone className="text-xl text-purple-600 mr-2" />
+                <span>+91 7517861332</span>
               </div>
-              <div className={flexClasses}>
-                <CgPhone className={imgClasses} />
-                <span>+91 1111111111</span>
+              <div className="flex items-center mb-2">
+                <MdEmail className="text-xl text-purple-600 mr-2" />
+                <span>arohisoftware98@gmail.com</span>
               </div>
-              <div className={flexClasses}>
-                <MdAttachEmail className={imgClasses} />
-                <span className="">Arohisoftware285@gmail.com</span>
+              <div className="flex items-center">
+                <FaMapMarkerAlt className="text-xl text-purple-600 mr-2" />
+                <span>Arohi Software Development, near Sai hospital building, Bhairavnath Chawk, Shrigoanda, Maharashtra</span>
               </div>
             </div>
-          </div>
-          <div className="p-8 md:w-1/2 content-center h-fit">
-            <form onSubmit={handleSubmit} className="space-y-4  h-fit">
-              <div className="flex space-x-4  h-fit">
-                <input
-                  type="text"
-                  id="firstName"
-                  placeholder="First name"
-                  className={inputClasses}
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  id="lastName"
-                  placeholder="Last name"
-                  className={inputClasses}
-                  value={formData.lastName}
-                  onChange={handleChange}
-                />
-              </div>
-              <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                className={inputClasses}
-                value={formData.email}
-                onChange={handleChange}
-              />
-              <input
-                type="tel"
-                id="phone"
-                placeholder="Phone number"
-                className={inputClasses}
-                value={formData.phone}
-                onChange={handleChange}
-              />
-              <textarea
-                id="message"
-                placeholder="Message"
-                className="w-full p-2 bg-gray-700 rounded h-32"
-                value={formData.message}
-                onChange={handleChange}
-              ></textarea>
-              <button
-                type="submit"
-                className="bg-purple-800 text-white p-2 rounded"
-              >
-                Send message
-              </button>
-            </form>
           </div>
         </div>
       </div>
 
- 
+      <div className="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg p-8">
+          <h2 className="text-3xl font-bold mb-6 text-white">Send us a message</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+              <input
+                type="text"
+                id="firstName"
+                placeholder="First name"
+                className="w-full p-2 rounded bg-gray-700 text-white"
+                value={formData.firstName}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                id="lastName"
+                placeholder="Last name"
+                className="w-full p-2 rounded bg-gray-700 text-white"
+                value={formData.lastName}
+                onChange={handleChange}
+              />
+            </div>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              className="w-full p-2 rounded bg-gray-700 text-white"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Phone number"
+              className="w-full p-2 rounded bg-gray-700 text-white"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+            <textarea
+              id="message"
+              placeholder="Message"
+              className="w-full p-2 rounded bg-gray-700 text-white h-32"
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-purple-800 text-white p-2 rounded hover:bg-purple-700 transition duration-300"
+            >
+              Send message
+            </button>
+          </form>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

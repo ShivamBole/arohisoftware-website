@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import './job.css'
+import "./job.css";
 const sharedButtonClasses =
   "py-2 bg-purple-800 text-white hover:bg-violet-800 rounded-lg transition duration-300";
 const sharedInputClasses =
@@ -49,98 +49,74 @@ const jobDetails = [
   {
     location: "INDIA",
     title: "Application Lead",
-    role: "Software Engineering – Project Role: Application Lead",
+    role: "Software Engineering - Project Role: Application Lead",
     businessArea: "Technology",
     experience: "Open to Freshers",
     postedTime: "Posted within last 24 hours",
   },
   {
     location: "INDIA",
-    title: "Senior Developer",
-    role: "Software Engineering – Project Role: Senior Developer",
-    businessArea: "Product Development",
-    experience: "Open to Freshers",
-    postedTime: "Posted 3 days ago",
-  },
-  {
-    location: "INDIA",
     title: "Project Manager",
-    role: "Project Management – Project Role: Project Manager",
+    role: "Project Management - Project Role: Project Manager",
     businessArea: "Operations",
     experience: "Open to Freshers",
     postedTime: "Posted 1 week ago",
   },
   {
     location: "INDIA",
-    title: "QA Engineer",
-    role: "Software Engineering – Project Role: QA Engineer",
-    businessArea: "Quality Assurance",
+    title: "Team Leader",
+    role: "Team Management - Project Role: Team Leader",
+    businessArea: "Operations",
     experience: "Open to Freshers",
     postedTime: "Posted 2 days ago",
   },
   {
     location: "INDIA",
-    title: "Product Owner",
-    role: "Product Management – Project Role: Product Owner",
-    businessArea: "Product Development",
+    title: "Full Stack Developer",
+    role: "Developer",
+    businessArea: "Development",
     experience: "Open to Freshers",
-    postedTime: "Posted 5 days ago",
+    postedTime: "Posted 1 day ago",
   },
   {
     location: "INDIA",
-    title: "Data Scientist",
-    role: "Data Science – Project Role: Data Scientist",
-    businessArea: "Analytics",
-    experience: "Open to Freshers",
-    postedTime: "Posted 4 days ago",
-  },
-  {
-    location: "INDIA",
-    title: "UX Designer",
-    role: "Design – Project Role: UX Designer",
-    businessArea: "Design",
-    experience: "Open to Freshers",
-    postedTime: "Posted 1 week ago",
-  },
-  {
-    location: "INDIA",
-    title: "Business Analyst",
-    role: "Business Analysis – Project Role: Business Analyst",
-    businessArea: "Business Intelligence",
+    title: "Java Developer",
+    role: "Software Engineering - Project Role: Java Developer",
+    businessArea: "Technology",
     experience: "Open to Freshers",
     postedTime: "Posted 3 days ago",
   },
   {
     location: "INDIA",
     title: "DevOps Engineer",
-    role: "Software Engineering – Project Role: DevOps Engineer",
+    role: "Software Engineering - Project Role: DevOps Engineer",
     businessArea: "Technology",
     experience: "Open to Freshers",
     postedTime: "Posted 2 days ago",
   },
   {
     location: "INDIA",
-    title: "IT Support Specialist",
-    role: "IT Support – Project Role: IT Support Specialist",
-    businessArea: "Support",
-    experience: "Open to Freshers",
-    postedTime: "Posted 5 days ago",
-  },
-  {
-    location: "INDIA",
-    title: "Network Engineer",
-    role: "Network Engineering – Project Role: Network Engineer",
-    businessArea: "Infrastructure",
-    experience: "Open to Freshers",
-    postedTime: "Posted 1 day ago",
-  },
-  {
-    location: "INDIA",
-    title: "Cybersecurity Analyst",
-    role: "Cybersecurity – Project Role: Cybersecurity Analyst",
+    title: "App Developer",
+    role: "App Developer",
     businessArea: "Security",
     experience: "Open to Freshers",
     postedTime: "Posted 3 days ago",
+  },
+  {
+    location: "INDIA",
+    title: "UI/UX Developer",
+    role: "Design - Project Role: UI/UX Developer",
+    businessArea: "Design",
+    experience: "Open to Freshers",
+    postedTime: "Posted 4 days ago",
+  },
+  {
+    location: "INDIA",
+    title: "Digital Marketer",
+    role: "Marketing - Project Role: Digital Marketer",
+    businessArea: "Marketing",
+    experience: "Open to Freshers",
+    postedTime: "Posted 5 days ago",
   },
 ];
 
@@ -208,48 +184,48 @@ const Job: React.FC = () => {
     setSelectedJob(null);
   };
 
- 
-const [formData, setFormData] = useState({
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  role: '',
-  education: '',
-  institution: '',
-  graduationYear: '',
-  workExperience: '',
-  resume: null,
-  coverLetter: null,
-});
-
-const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  const { name, value } = e.target;
-  setFormData({
-    ...formData,
-    [name]: value,
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    role: "",
+    education: "",
+    institution: "",
+    graduationYear: "",
+    workExperience: "",
+    resume: null,
+    coverLetter: null,
   });
-};
 
-const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const { name, files } = e.target;
-  if (files) {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: files[0],
+      [name]: value,
     });
-  }
-};
+  };
 
-const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
-  // Handle form submission logic, such as sending data to an API
-  console.log(formData);
-};
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, files } = e.target;
+    if (files) {
+      setFormData({
+        ...formData,
+        [name]: files[0],
+      });
+    }
+  };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission logic, such as sending data to an API
+    console.log(formData);
+  };
 
   return (
-    <div className="min-h-screen bg-white p-4 mt-20">
+    <div className="min-h-screen bg-white p-4 ">
       <div className="max-w-7xl mx-auto mb-10">
         <div className="text-center my-14">
           <h1 className="text-xl lg:text-4xl font-bold text-black">
@@ -354,108 +330,210 @@ const handleSubmit = (e: React.FormEvent) => {
         {isModalOpen && selectedJob && (
           <div className="fixed inset-0 flex items-center justify-center h-70vh bg-black mt-5 bar overflow-y-scroll bg-opacity-50 z-50">
             <div className="p-6 rounded-lg shadow-lg bg-black mt-[80vh] lg:mt-[40vh] ">
-             <form onSubmit={handleSubmit} className=''>
-      <div className="grid gap-6 mb-6 md:grid-cols-2">
-        <div>
-          <label htmlFor="firstName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
-            placeholder="John"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name</label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
-            placeholder="Doe"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Role</label>
-          <input
-            type="text"
-            id="role"
-            name="role"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
-            placeholder="Flowbite"
-            value={formData.role}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
-            placeholder="123-45-678"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </div>
-      
-      </div>
-      <div className="mb-6">
-        <label htmlFor="email" className="block mb-2 text-sm text-gray-900 dark:text-white">Email address</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
-          placeholder="john.doe@company.com"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <fieldset>
-        <legend className="block mb-2 text-sm text-gray-900 dark:text-white">Education</legend>
-        <div className='flex flex-col'>
-        <label htmlFor="education" className="block mb-2 text-sm text-gray-900 dark:text-white">Highest Level of Education:</label>
-        <input type="text" id="education" name="education" value={formData.education} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
-          onChange={handleChange} required /> <br />
-        </div>
-        <div className='flex flex-col'>
-        <label htmlFor="institution" className="block mb-2 text-sm text-gray-900 dark:text-white">Institution Name:</label>
-        <input type="text" id="institution" name="institution" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500" value={formData.institution} onChange={handleChange} required /> <br />
-        </div>
-        <div className='flex flex-col'>
-        <label htmlFor="graduationYear" className="block mb-2 text-sm text-gray-900 dark:text-white">Year of Graduation:</label>
-        <input type="number" id="graduationYear" name="graduationYear" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500" value={formData.graduationYear} onChange={handleChange} required /> <br />
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend className="block mb-2 text-sm text-gray-900 dark:text-white">Resume and Cover Letter</legend>
-        <div className='flex flex-col'>
-        <label className="block mb-2 text-sm text-gray-900 dark:text-white" htmlFor="resume">Upload Resume:</label>
-        <input type="file" id="resume" name="resume" onChange={handleFileChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500" required /> <br />
-        </div>
-        <div className='flex flex-col'>
-        <label className="block mb-2 text-sm text-gray-900 dark:text-white"  htmlFor="coverLetter">Upload Cover Letter:</label>
-        <input type="file" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500" id="coverLetter" name="coverLetter" onChange={handleFileChange} /> <br />
-        </div>
-      </fieldset>
-      
+              <form onSubmit={handleSubmit} className="">
+                <div className="grid gap-6 mb-6 md:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="firstName"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      First name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                      placeholder="John"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="lastName"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Last name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                      placeholder="Doe"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="role"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Role
+                    </label>
+                    <input
+                      type="text"
+                      id="role"
+                      name="role"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                      placeholder="Flowbite"
+                      value={formData.role}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Phone number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                      placeholder="123-45-678"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="mb-6">
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 text-sm text-gray-900 dark:text-white"
+                  >
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                    placeholder="john.doe@company.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <fieldset>
+                  <legend className="block mb-2 text-sm text-gray-900 dark:text-white">
+                    Education
+                  </legend>
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="education"
+                      className="block mb-2 text-sm text-gray-900 dark:text-white"
+                    >
+                      Highest Level of Education:
+                    </label>
+                    <input
+                      type="text"
+                      id="education"
+                      name="education"
+                      value={formData.education}
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                      onChange={handleChange}
+                      required
+                    />{" "}
+                    <br />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="institution"
+                      className="block mb-2 text-sm text-gray-900 dark:text-white"
+                    >
+                      Institution Name:
+                    </label>
+                    <input
+                      type="text"
+                      id="institution"
+                      name="institution"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                      value={formData.institution}
+                      onChange={handleChange}
+                      required
+                    />{" "}
+                    <br />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="graduationYear"
+                      className="block mb-2 text-sm text-gray-900 dark:text-white"
+                    >
+                      Year of Graduation:
+                    </label>
+                    <input
+                      type="number"
+                      id="graduationYear"
+                      name="graduationYear"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                      value={formData.graduationYear}
+                      onChange={handleChange}
+                      required
+                    />{" "}
+                    <br />
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend className="block mb-2 text-sm text-gray-900 dark:text-white">
+                    Resume and Cover Letter
+                  </legend>
+                  <div className="flex flex-col">
+                    <label
+                      className="block mb-2 text-sm text-gray-900 dark:text-white"
+                      htmlFor="resume"
+                    >
+                      Upload Resume:
+                    </label>
+                    <input
+                      type="file"
+                      id="resume"
+                      name="resume"
+                      onChange={handleFileChange}
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                      required
+                    />{" "}
+                    <br />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      className="block mb-2 text-sm text-gray-900 dark:text-white"
+                      htmlFor="coverLetter"
+                    >
+                      Upload Cover Letter:
+                    </label>
+                    <input
+                      type="file"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500"
+                      id="coverLetter"
+                      name="coverLetter"
+                      onChange={handleFileChange}
+                    />{" "}
+                    <br />
+                  </div>
+                </fieldset>
 
-      <button type="submit" className="text-white mr-4 bg-violet-600 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800">Submit</button>
-      <button  className="text-white bg-violet-600 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800" onClick={closeModal}>Close</button>
-
-    </form>
+                <button
+                  type="submit"
+                  className="text-white mr-4 bg-violet-600 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
+                >
+                  Submit
+                </button>
+                <button
+                  className="text-white bg-violet-600 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
+                  onClick={closeModal}
+                >
+                  Close
+                </button>
+              </form>
             </div>
           </div>
         )}

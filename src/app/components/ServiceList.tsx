@@ -8,23 +8,23 @@ const WhyReinventLearning: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-16">
           <div className="flex flex-col items-center">
             <div className="border-t-4 border-purple-600 w-16 mb-4"></div>
-            <h3 className="text-5xl font-bold mb-2"> 39%</h3>
-            <p className="text-gray-400 text-justify">A LinkedIn Learning report found that employees who invest in developing new skills are more likely to receive promotions compared to those who do not.</p>
+            <h3 className="text-3xl font-bold mb-2"> Learning Strategies:</h3>
+            <p className="text-gray-400 text-justify">Explore the effectiveness of personalized learning approaches compared to traditional methods, considering diverse student needs and preferences. Evaluate technologies enabling personalized learning and their impact on engagement and academic performance.</p>
           </div>
           <div className="flex flex-col items-center">
             <div className="border-t-4 border-purple-600 w-16 mb-4"></div>
-            <h3 className="text-5xl font-bold mb-2">50%</h3>
-            <p className="text-gray-400 text-justify"> The World Economic Forum reports that by 2025, 50% of all employees will need reskilling due to technological advancements. Those who continuously update their skills are more likely to remain employable and competitive in the job market.</p>
+            <h3 className="text-3xl font-bold mb-2">Emerging Technologies</h3>
+            <p className="text-gray-400 text-justify"> Investigate how AI, virtual reality, and augmented reality are transforming education. Discuss benefits, challenges, case studies, and ethical considerations for integrating these technologies into learning environments.</p>
           </div>
           <div className="flex flex-col items-center ">
             <div className="border-t-4 border-purple-600 w-16 mb-4"></div>
-            <h3 className="text-5xl font-bold mb-2">$30</h3>
-            <p className="text-gray-400 text-justify">Companies that invest in employee learning and development see significant returns. A report by IBM found that every dollar invested in online training results in $30 in productivity gains.</p>
+            <h3 className="text-3xl font-bold mb-2">Cultural Adaptations</h3>
+            <p className="text-gray-400 text-justify">Analyze the importance of cultural diversity in education. Explore strategies for inclusive learning environments that respect diverse perspectives, enhancing student motivation and academic achievement</p>
           </div>
           <div className="flex flex-col items-center">
             <div className="border-t-4 border-purple-600 w-16 mb-4"></div>
-            <h3 className="text-5xl font-bold mb-2">94%</h3>
-            <p className="text-gray-400 text-justify">Continuous learning helps individuals stay relevant in their current roles. The same LinkedIn Learning report indicates that 94% of employees would stay at a company longer if it invested in their learning and development.
+            <h3 className="text-3xl font-bold mb-2">Skills for the Future</h3>
+            <p className="text-gray-400 text-justify">Identify essential 21st-century skills and competencies. Discuss how educational frameworks can be updated to prepare students for evolving job markets, emphasizing critical thinking, creativity, collaboration, and digital literacy.
             </p>
           </div>
         </div>

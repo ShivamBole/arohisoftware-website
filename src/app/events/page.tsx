@@ -73,15 +73,15 @@ function EventPage() {
                 <div className=" ">
                   <Card className='w-screen'>
                     <CardContent className="flex items-center justify-center p-0">
-                      <img  height={1000} className='w-full max-h-[80vh]  object-cover ' src={images[index]} />
+                      <img height={1000} className='w-full max-h-[80vh]  object-cover ' src={images[index]} />
                     </CardContent>
                   </Card>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-    
-  
+
+
         </Carousel>
       </div>
 
@@ -92,7 +92,7 @@ function EventPage() {
           <Event key={i} {...event} />
         ))}
       </div>
-      
+
       <div className='flex gap-5 flex-col items-center justify-center my-24'>
         <h2 className='text-5xl text-black font-thin mb-12'>Gleams of Events 🌟</h2>
         <div className='mx-12 lg:mx-0 lg:translate-x-12'>
@@ -122,8 +122,8 @@ interface EventProps {
 }
 
 const Event: React.FC<EventProps> = ({ title, date, time, address, description, imageUrl }) => (
-  <div className="mt-12 hover:pb-12 transition-all hover:pr-12 bg-gradient-to-br w-fit from-violet-400 to-orange-300 p-0">
-    <div className="lg:w-[80vw] mx-auto transition-all backdrop-blur-xl flex flex-col text-black md:flex-row bg-[#b7bdf8] p-6">
+  <div className="mt-12 relative   transition-all bg-gradient-to-br w-fit from-violet-400 to-orange-300  p-0">
+    <div className="lg:w-[80vw] mx-auto transition-all backdrop-blur-xl flex flex-col text-black md:flex-row bg-[#39393a] opacity-35 p-6">
       <div className="md:w-1/2">
         <img src={imageUrl} className="object-cover w-full h-full" alt={title} />
       </div>
@@ -142,11 +142,16 @@ const Event: React.FC<EventProps> = ({ title, date, time, address, description, 
           <p className="text-lg">{address}</p>
         </div>
         <p className="mb-4">{description}</p>
-        <div className="bg-gradient-to-br w-fit from-violet-400 rounded-lg to-orange-300 p-2">
+        <div className=" w-fit from-violet-400 rounded-lg to-orange-300 p-2">
           <button className="self-start bg-black text-white px-6 py-2 rounded-md">GET A TICKET</button>
         </div>
       </div>
+      
     </div>
+    <div className="bg-gradient-to-br absolute top-56 lg:left-96 left-20 w-fit from-violet-400 rounded-lg to-orange-300 p-2">
+          <button className="self-start bg-black text-white lg:px-8 py-6   rounded-md text-4xl">Upcomming</button>
+        </div>
+    
   </div>
 );
 

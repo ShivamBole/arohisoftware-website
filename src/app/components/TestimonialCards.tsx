@@ -1,56 +1,47 @@
 "use client";
- 
+
 import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
- 
 const musicSchoolTestimonial = [
-    {
-      quote:
-        "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-      name: "Charles Dickens",
-      title: "A Tale of Two Cities",
-    },
-    {
-      quote:
-        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-      name: "William Shakespeare",
-      title: "Hamlet",
-    },
-    {
-      quote: "All that we see or seem is but a dream within a dream.",
-      name: "Edgar Allan Poe",
-      title: "A Dream Within a Dream",
-    },
-    {
-      quote:
-        "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-      name: "Jane Austen",
-      title: "Pride and Prejudice",
-    },
-    {
-      quote:
-        "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-      name: "Herman Melville",
-      title: "Moby-Dick",
-    },
-  ];
+  {
+    quote:
+      "Arohi Software has entered a dynamic partnership with VS Tech to accelerate business growth. Sanket Ghodake, CEO and Chairman of Arohi Software, remarked, Joining forces with VS Tech allows us to navigate challenges and set new industry standards.",
+    name: "Sanket Ghodake",
+    title: "Arohi Software Partners with VS Tech for Strategic Growth",
+  },
+  {
+    quote:
+      "Arohi Software and VS Tech Horizon have partnered to innovate and set new standards. CEO Sanket Ghodake announced, This partnership empowers us to excel. They've also launched a scholarship program from grade 10 to graduate level, providing scholarships, prizes, gifts, and accolades, emphasizing their commitment to nurturing talent and community development.",
+    name: "Arohi Software",
+    title:
+      " Arohi Software and VS Tech Horizon Launch Scholarship Program for Students",
+  },
+  {
+    quote:
+      "Arohi Software has entered a dynamic partnership with VS Tech to accelerate business growth. Sanket Ghodake, CEO and Chairman of Arohi Software, remarked, Joining forces with VS Tech allows us to navigate challenges and set new industry standards.",
+    name: "Sanket Ghodake",
+    title: "Arohi Software Partners with VS Tech for Strategic Growth",
+  },
+];
 
 function TestimonialCards() {
   return (
     <div className="h-[40rem] rounded-md flex flex-col antialiased  pt-20 relative overflow-hidden">
-     <h2 className="text-3xl font-bold  mb-20 ml-20 z-10">Arohi Software News</h2>
-        <div className="flex justify-center w-full overflow-hidden px-4 sm:px-6 lg:px-8">
-            <div className="w-full max-w-6xl">
-            <InfiniteMovingCards
-                items={musicSchoolTestimonial}
-                direction="right"
-                speed="slow"
-      />
-            </div>
+      <h2 className="text-3xl font-bold  mb-20 ml-20 z-10">
+        Arohi Software News
+      </h2>
+      <div className="flex justify-center w-full overflow-hidden px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-9xl">
+          <InfiniteMovingCards
+            items={musicSchoolTestimonial}
+            direction="right"
+            speed="slow"
+          />
         </div>
-  </div>
-  )
+      </div>
+    </div>
+  );
 }
 
-export default TestimonialCards
+export default TestimonialCards;

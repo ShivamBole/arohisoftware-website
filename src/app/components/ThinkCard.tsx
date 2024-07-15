@@ -18,7 +18,7 @@ const ThinkCard: React.FC<ThinkCardProps> = ({ images, altText, title, text }) =
      <div className='box'>
       <Image src={`${images}`} alt={altText} width={500} height={300} />
       <div className='second-div'>
-        <h1>Research report</h1>
+        <h1></h1>
         <p>{title}</p>
       </div>
       <div className='overlay'>

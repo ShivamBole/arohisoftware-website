@@ -1,51 +1,60 @@
 import React from 'react';
-// import "./Companies.css";
-import "./OurPartners.css"
+import "./OurPartners.css";
 
 const companies = [
   {
     id: 1,
-    name: 'Google',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
+    name: 'VS Tech Horizon',
+    logo: 'https://yt3.googleusercontent.com/DhdYxWD2LwcnzHdPBIBtrKq8M2AHL39yekLoalqR09vX18rKX29GYfJaIW2FUaGjUbZ70sLxSg=s176-c-k-c0x00ffffff-no-rj',
   },
   {
     id: 4,
-    name: 'LinkedIn',
-    logo: 'https://media.licdn.com/dms/image/D560BAQFtWM46bCiJfQ/company-logo_200_200/0/1695197175289?e=2147483647&v=beta&t=46cYmda122C_egnedarsDunJhoZgjhMYaeUJixhrbXM',
+    name: 'GrowAro TNP',
+    logo: 'https://media.licdn.com/dms/image/D560BAQHGYF5tCSi_uQ/company-logo_200_200/0/1695197584351?e=2147483647&v=beta&t=s2DN3cuT_ej1GYgKNRvHj4ttOXgHv3uAsLQ6hObjQm4',
   },
   {
-    id: 5,
-    name: 'Microsoft',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg',
+    id: 1,
+    name: 'VS Tech Horizon',
+    logo: 'https://yt3.googleusercontent.com/DhdYxWD2LwcnzHdPBIBtrKq8M2AHL39yekLoalqR09vX18rKX29GYfJaIW2FUaGjUbZ70sLxSg=s176-c-k-c0x00ffffff-no-rj',
   },
   {
-    id: 6,
-    name: 'Amazon',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg',
+    id: 4,
+    name: 'GrowAro TNP',
+    logo: 'https://media.licdn.com/dms/image/D560BAQHGYF5tCSi_uQ/company-logo_200_200/0/1695197584351?e=2147483647&v=beta&t=s2DN3cuT_ej1GYgKNRvHj4ttOXgHv3uAsLQ6hObjQm4',
   },
   {
-    id: 7,
-    name: 'Facebook',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg',
+    id: 1,
+    name: 'VS Tech Horizon',
+    logo: 'https://yt3.googleusercontent.com/DhdYxWD2LwcnzHdPBIBtrKq8M2AHL39yekLoalqR09vX18rKX29GYfJaIW2FUaGjUbZ70sLxSg=s176-c-k-c0x00ffffff-no-rj',
   },
   {
-    id: 8,
-    name: 'Apple',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
+    id: 4,
+    name: 'GrowAro TNP',
+    logo: 'https://media.licdn.com/dms/image/D560BAQHGYF5tCSi_uQ/company-logo_200_200/0/1695197584351?e=2147483647&v=beta&t=s2DN3cuT_ej1GYgKNRvHj4ttOXgHv3uAsLQ6hObjQm4',
+  },
+  {
+    id: 1,
+    name: 'VS Tech Horizon',
+    logo: 'https://yt3.googleusercontent.com/DhdYxWD2LwcnzHdPBIBtrKq8M2AHL39yekLoalqR09vX18rKX29GYfJaIW2FUaGjUbZ70sLxSg=s176-c-k-c0x00ffffff-no-rj',
+  },
+  {
+    id: 4,
+    name: 'GrowAro TNP',
+    logo: 'https://media.licdn.com/dms/image/D560BAQHGYF5tCSi_uQ/company-logo_200_200/0/1695197584351?e=2147483647&v=beta&t=s2DN3cuT_ej1GYgKNRvHj4ttOXgHv3uAsLQ6hObjQm4',
   },
 ];
 
-function Companies() {
+function Partners() {
   return (
-    <div className="py-12 mt-12">
+    <div className="py-12 mt-12 bg-white">
       <div className="container mx-auto">
-        <h1 className="text-white ml-20 lg:text-6xl text-3xl font-bold mb-12">Our Partners</h1>
+        <h1 className="text-black ml-20 text-6xl font-bold mb-12">Our Partners</h1>
         <div className="overflow-hidden">
-          <div className="animate-scroll flex lg:gap-60 gap-8">
+          <div className="animate-scroll flex gap-36">
             {companies.concat(companies).map((company, index) => (
-              <div key={index} className="flex flex-col mt-9 items-center">
+              <div key={index} className="flex flex-col items-center w-64 mt-9">
                 <img src={company.logo} alt={company.name} className="h-20 w-20 object-contain mb-4" />
-                <p className="text-white text-2xl">{company.name}</p>
+                <p className="text-black text-2xl whitespace-nowrap">{company.name}</p>
               </div>
             ))}
           </div>
@@ -55,4 +64,4 @@ function Companies() {
   );
 }
 
-export default Companies;
+export default Partners;

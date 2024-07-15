@@ -11,7 +11,7 @@ const TermsAndConditions: React.FC = () => {
 
       <h2 className="text-2xl font-semibold text-white mb-4">Introduction</h2>
       <p className="mb-6 text-lg leading-relaxed text-white">
-        Welcome to <span className="font-bold">Arohi Software Development</span>. By accessing or using our website and services, you agree to be bound by these Terms and Conditions ("Terms"). Our company provides various software development services, including custom software development, web application development, mobile application development, software maintenance and support, software consulting, cloud computing, and software integration services.
+        Welcome to <span className="font-bold">Arohi Software Development</span>. By accessing or using our website and services, you agree to be bound by these Terms and Conditions (`&quot;`Terms`&quot;`). Our company provides various software development services, including custom software development, web application development, mobile application development, software maintenance and support, software consulting, cloud computing, and software integration services.
       </p>
 
       <h2 className="text-2xl font-semibold text-white mb-4">User Responsibilities</h2>
@@ -46,7 +46,7 @@ const TermsAndConditions: React.FC = () => {
 
       <h2 className="text-2xl font-semibold text-white mb-4">Changes to Terms</h2>
       <p className="mb-6 text-lg leading-relaxed text-white">
-        We may modify or replace these Terms at our sole discretion, with at least 30 days' notice for any material changes.
+        We may modify or replace these Terms at our sole discretion, with at least 30 day`&apos;`s notice for any material changes.
       </p>
 
     </div>

@@ -100,9 +100,9 @@ export default function Page() {
                 <img
                   src="/xbg1.png"
                   alt="Our Mission"
-                  className="w-full h-40 object-cover mb-4 rounded-md group-hover:opacity-0 transition-opacity duration-300"
+                  className="w-full h-40 object-cover  rounded-md group-hover:opacity-0 transition-opacity duration-300"
                 />
-                <div className="absolute inset-0 flex flex-col justify-center items-center bg-gray-900 bg-opacity-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex  flex-col justify-center items-center bg-gray-900 bg-opacity-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-gray-400">
                     To provide state-of-the-art technology solutions that add
                     real value to businesses.
@@ -144,7 +144,7 @@ export default function Page() {
         </section>
 
         {/* Video Section */}
-        <section style={{ backgroundImage: "url('./line.png')" }}>
+        {/* <section style={{ backgroundImage: "url('./line.png')" }}>
           <div
             className="container mx-auto text-center px-4"
             style={{ maxWidth: "70vw", backgroundImage: "url('./line.png')" }}
@@ -166,14 +166,15 @@ export default function Page() {
               ></iframe>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Services Section */}
 
         <Job />
-        <DreamRealizedSection />
+        {/* <DreamRealizedSection /> */}
 
         <StayConnected />
+        {/* <Feedform title="with Arohi Software"/> */}
 
         <Footer />
       </main>

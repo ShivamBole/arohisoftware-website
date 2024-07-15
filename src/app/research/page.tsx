@@ -4,6 +4,9 @@ import React from 'react';
 import Image from 'next/image';
 import Footer from '@/app/components/Footer';
 import Feedform from '../components/Feedform';
+import HomepageCard from "../components/HomepageCard";
+import CareersComponent from "../components/CareersComponent";
+import OurPartners from "../components/OurPartners";
 
 const research = () => {
   return (
@@ -34,7 +37,7 @@ const research = () => {
         <div className='h-auto lg:w-[500px]'>
           <h1 className='p-5 font-mono text-3xl lg:text-4xl text-black'>Purposeful Development</h1>
           <p className='p-5 font-normal text-black lg:w-[500px] '>Today’s AI models can be made purposeful by infusing human ingenuity and contextual knowledge. Our inventions systematically integrate predictive intelligence, contextualized decision-making, and humanized semantic interactions in enterprise AI applications.</p>
-          <button className='text-white p-3 m-5 bg-black rounded-lg hover:scale-110 transform transition-transform duration-200 w-40'>Explore</button>
+          {/* <button className='text-white p-3 m-5 bg-black rounded-lg hover:scale-110 transform transition-transform duration-200 w-40'>Explore</button> */}
         </div>
       </div>
 
@@ -42,10 +45,12 @@ const research = () => {
         <div className='h-auto lg:w-[500px] mb-6 lg:mb-0'>
           <h1 className='p-5 font-mono text-3xl lg:text-4xl text-black'>Computing Futures</h1>
           <p className='p-5 font-normal text-black lg:w-[500px]'>Efficient computing systems will be the backbone for businesses in the future. We invent high performance, fault-tolerant, and energy-efficient computing systems to meet the growing demands of AI and physics-based systems.</p>
-          <button className='text-white p-3 m-5 bg-black rounded-lg hover:scale-110 transform transition-transform duration-200 w-40'>Explore</button>
+          {/* <button className='text-white p-3 m-5 bg-black rounded-lg hover:scale-110 transform transition-transform duration-200 w-40'>Explore</button> */}
         </div>
         <div className='h-[400px] lg:h-auto lg:w-[600px] bg-cover shadow-sm hover:scale-110 transform transition-transform duration-200' style={{backgroundImage: "url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"}}></div>
       </div>
+      <OurPartners/>
+      <CareersComponent/>
       <Feedform title="Move to Cloud or Make the most of Existing Cloud Setup for the Next-phase-of-growth." />
       <Footer />
     </div>

@@ -3,7 +3,15 @@ import Image from "next/image";
 import "animate.css";
 import "./WorkCard.css";
 
-const WorkCard = ({ images, altText, text, title }) => {
+// Define the props interface
+interface WorkCardProps {
+  images: string;
+  altText: string;
+  text: string;
+  title: string;
+}
+
+const WorkCard: React.FC<WorkCardProps> = ({ images, altText, text, title }) => {
   return (
     <div
       className="card md:pt-[1rem] pt-[10rem]"
@@ -14,12 +22,10 @@ const WorkCard = ({ images, altText, text, title }) => {
         backgroundPosition: "center",
       }}
     >
-      <div className="card-content h-[123%]">
+      <div className="card-content h-[200%]">
         <h2 className="card-title my-5">{title}</h2>
         <p className="card-body my-5">{text}</p>
-        <a href="#" className="button">
-          Learn More
-        </a>
+      
       </div>
     </div>
   );

@@ -24,8 +24,16 @@ import Feedform from "./components/Feedform";
 
 import OurPartners from "./components/OurPartners";
 import HomePageComponent from "./components/HomePageComponent";
+import { auth } from "@/auth";
 
 export default function Home() {
+
+  // const session = await auth();
+  // const user = session?.user;
+
+  // console.log("Home -> user", user);
+
+
   return (
     <div className=" relative overflow-hidden">
       <HeroSection />
@@ -36,7 +44,7 @@ export default function Home() {
       <OurPartners />
       <CareersComponent />
       <Feedform title="Business With Arohi Software " />
-      {/* <TestimonialCards /> */}
+      <TestimonialCards />
       <Footer />
     </div>
   );

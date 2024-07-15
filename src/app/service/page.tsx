@@ -1,10 +1,11 @@
-
 "use client";
 import Image from "next/image";
 import ServiceCard from "../components/ServicesCard";
 import IndustrySelection from "../components/IndustrySelectionCard";
 import Footer from "../components/Footer";
 import Feedform from "../components/Feedform";
+import Partners from "../components/Partners";
+
 
 function Service() {
   return (
@@ -58,9 +59,15 @@ function Service() {
               Belief Power Business
             </h2>
             <p className="text-base sm:text-lg text-gray-700">
-              At Arohi Software, we go beyond helping businesses transform through
-              technology. We help them make a meaningful difference; to their
-              customers, and to the communities they serve.
+              At Arohi Software, we believe in the transformative power of
+              technology to drive businesses forward. Beyond mere
+              transformation, we empower companies to create a lasting impact on
+              their customers and communities. Our mission is to not only
+              enhance operational efficiencies but also to foster genuine
+              connections that contribute to a better world. Through innovative
+              software solutions and a commitment to social responsibility, we
+              partner with businesses to achieve sustainable growth and
+              meaningful change.
             </p>
           </div>
           <div className="lg:w-1/2">
@@ -72,16 +79,14 @@ function Service() {
           </div>
         </div>
         <div>
-        <IndustrySelection/>
-          
-         
+          <IndustrySelection />
         </div>
       </div>
-     
-      <ServiceCard/>
-      <Feedform title="" />
-      <Footer/>
-          
+
+      <ServiceCard />
+      <Partners/>
+      <Feedform title="business with Arohi Software" />
+      <Footer />
     </div>
   );
 }

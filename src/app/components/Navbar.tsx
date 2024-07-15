@@ -5,19 +5,95 @@ import { cn } from "@/utils/cn";
 import logo from "../../../public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
+import { FaUserCircle } from "react-icons/fa";
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const { data: session } = useSession();
 
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
 
+  const handleProfileClick = () => {
+    setIsProfileMenuOpen(!isProfileMenuOpen);
+  };
+
+  function stringToColor(string: string): string {
+    let hash = 0;
+    for (let i = 0; i < string.length; i++) {
+      hash = string.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    let color = '#';
+    for (let i = 0; i < 3; i++) {
+      const value = (hash >> (i * 8)) & 0xff;
+      color += ('00' + value.toString(16)).substr(-2);
+    }
+    return color;
+  }
+  
+  function getInitials(name: string): string {
+    const names = name.split(' ');
+    const initials = names.map((n) => n[0]).join('');
+    return initials.toUpperCase();
+  }
+
+  const userInitials = session?.user?.name ? getInitials(session.user.name) : '';
+  const bgColor = session?.user?.name ? stringToColor(session.user.name) : '#ccc';
+
+
   return (
     <div className={cn("fixed top-0 inset-x-0 z-50 w-full", className)}>
       <nav className="bg-black w-full">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        
+        <div className="lg:hidden sm:flex md:flex">
+            {session?.user ? (
+              <div className="relative">
+                <button
+                  className="text-white focus:outline-none"
+                  onClick={handleProfileClick}
+                >
+                  <FaUserCircle size={24} />
+                </button>
+                {isProfileMenuOpen && (
+                 <div className="absolute lg:right-0 mt-2 w-50 bg-[#282828] shadow-md rounded-md">
+                 <div className="flex space-x-3 p-4 pb-5">
+                   <div className="flex items-center space-x-4">
+                     <button className="flex items-center justify-center w-10 h-10 rounded-full"
+               style={{ backgroundColor: bgColor }}>
+                     <span className="text-white font-semibold">
+                 {userInitials}
+               </span>
+                     </button>
+                   </div>
+                   <div className=" space-y-1">
+                      <p className="text-sm font-semibold ">{session.user.name}</p>
+                   <p className="text-xs text-gray-500">{session.user.email}</p>
+                   </div>
+                 </div>
+                 <div className="border-lg border-gray-200">
+                   <button
+                     className="w-full text-left px-4 py-2 text-sm text-white bg-purple-600  hover:font-bold hover:bg-purple-800"
+                     onClick={() => signOut()}
+                   >
+                     Logout
+                   </button>
+                 </div>
+               </div>
+                )}
+              </div>
+            ) : (
+              <Link href="/login">
+                <button className="text-white focus:outline-none">Login</button>
+              </Link>
+            )}
+          </div>
+
+
           <div className="flex items-center">
             <Link href="/">
               <Image src={logo} alt="Logo" className="w-16 h-16" />
@@ -61,14 +137,10 @@ function Navbar({ className }: { className?: string }) {
                         Learning
                       </span>
                     </HoveredLink>
-                    {/* <HoveredLink href="/marketing&experience">
-                      <span className="hover:border-b-4 hover:text-blue-400">
-                        Marketing and Experience
-                      </span>
-                    </HoveredLink> */}
                   </div>
                 </div>
               </MenuItem>
+
 
               <Link href="/whatweThink" className="ml-2">
                 <MenuItem
@@ -76,6 +148,7 @@ function Navbar({ className }: { className?: string }) {
                   active={active}
                   item="What we think"
                 />
+
               </Link>
 
               <MenuItem
@@ -122,7 +195,7 @@ function Navbar({ className }: { className?: string }) {
                     </HoveredLink>
                     <HoveredLink href="/media">
                       <span className="hover:border-b-4 animate-in border-neutral-100 border-y-gray-400 hover:text-blue-400">
-                        Media Relations
+                       News Room
                       </span>
                     </HoveredLink>
                     <HoveredLink href="/investor">
@@ -146,6 +219,11 @@ function Navbar({ className }: { className?: string }) {
                       </span>
                     </HoveredLink>
 
+                    <HoveredLink href="/careers">
+                      <span className="hover:border-b-4 animate-in hover:text-blue-400 border-neutral-100 border-y-gray-400">
+                        Careers
+                      </span>
+                    </HoveredLink>
                     <HoveredLink href="/courses">
                       <span className="hover:border-b-4 animate-in hover:text-blue-400 border-neutral-100 border-y-gray-400">
                         Training & Development
@@ -191,11 +269,48 @@ function Navbar({ className }: { className?: string }) {
             </Menu>
           </div>
 
-          {/* Login button */}
-          <div className="hidden lg:block px-8">
-            <Link href="/login">
-              <button className="text-white focus:outline-none">Login</button>
-            </Link>
+          {/* Login button or profile button */}
+          <div className="hidden lg:flex px-8">
+            {session?.user ? (
+              <div className="relative">
+                <button
+                  className="text-white focus:outline-none"
+                  onClick={handleProfileClick}
+                >
+                  <FaUserCircle size={24} />
+                </button>
+                {isProfileMenuOpen && (
+                  <div className="absolute lg:right-0 mt-2 w-50 bg-[#282828] shadow-md rounded-md">
+                  <div className="flex space-x-3 p-4 pb-5">
+                    <div className="flex items-center space-x-4">
+                      <button className="flex items-center justify-center w-10 h-10 rounded-full"
+                style={{ backgroundColor: bgColor }}>
+                      <span className="text-white font-semibold">
+                  {userInitials}
+                </span>
+                      </button>
+                    </div>
+                    <div className=" space-y-1">
+                       <p className="text-sm font-semibold ">{session.user.name}</p>
+                    <p className="text-xs text-gray-500">{session.user.email}</p>
+                    </div>
+                  </div>
+                  <div className="border-lg border-gray-200">
+                    <button
+                      className="w-full text-left px-4 py-2 text-sm text-white bg-purple-600  hover:font-bold hover:bg-purple-800"
+                      onClick={() => signOut()}
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </div>
+                )}
+              </div>
+            ) : (
+              <Link href="/login">
+                <button className="text-white focus:outline-none">Login</button>
+              </Link>
+            )}
           </div>
 
           {/* Search Icon and Burger icon for small screens */}
@@ -223,9 +338,6 @@ function Navbar({ className }: { className?: string }) {
             </div>
 
             <div className="block lg:hidden space-x-4">
-              <Link href="/login">
-                <button className="text-white focus:outline-none">Login</button>
-              </Link>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white focus:outline-none"
@@ -238,21 +350,12 @@ function Navbar({ className }: { className?: string }) {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  {isMenuOpen ? (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  ) : (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16m-7 6h7"
-                    />
-                  )}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
                 </svg>
               </button>
             </div>
@@ -262,44 +365,30 @@ function Navbar({ className }: { className?: string }) {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="flex flex-col items-center w-[80vw] bg-black px-5 pt-4 pb-3 space-y-1 sm:px-3">
-              <Menu
-                setActive={setActive}
-                className="flex flex-col px-8 items-start rounded-none space-y-4"
-              >
-                <MenuItem
-                  setActive={setActive}
-                  active={active}
-                  item="What we do >"
-                >
-                  <div className="flex flex-col px-4 space-y-4 items-center pb-4">
-                    <HoveredLink href="/service" onClick={handleLinkClick}>
-                      <span className="text-white">Services</span>
-                    </HoveredLink>
-                    <HoveredLink href="/research" onClick={handleLinkClick}>
-                      <span className="text-white">Research & Innovations</span>
-                    </HoveredLink>
-                    <HoveredLink href="/security" onClick={handleLinkClick}>
-                      <span className="text-white">Security</span>
-                    </HoveredLink>
-                    <HoveredLink href="/learning" onClick={handleLinkClick}>
-                      <span className="text-white">Learning</span>
-                    </HoveredLink>
-                    <HoveredLink
-                      href="/marketing&experience"
-                      onClick={handleLinkClick}
-                    >
-                      <span className="text-white">
-                        Marketing $ Experience
-                      </span>
-                    </HoveredLink>
-                  </div>
-                </MenuItem>
-                <Link href="/whatweThink">
+            <Menu setActive={setActive} className="flex flex-col space-y-4">
+              <MenuItem setActive={setActive} active={active} item="What we do">
+                <div className="flex flex-col space-y-4 py-4">
+                  <HoveredLink href="/service" onClick={handleLinkClick}>
+                    Services
+                  </HoveredLink>
+                  <HoveredLink href="/research" onClick={handleLinkClick}>
+                    Research & Innovations
+                  </HoveredLink>
+                  <HoveredLink href="/security" onClick={handleLinkClick}>
+                    Security
+                  </HoveredLink>
+                  <HoveredLink href="/learning" onClick={handleLinkClick}>
+                    Learning
+                  </HoveredLink>
+                </div>
+              </MenuItem>
+              <Link href="/whatweThink">
+                <div onClick={handleLinkClick}>
                   <MenuItem
                     setActive={setActive}
                     active={active}
                     item="What we think"
+
                     // onClick={handleLinkClick}
                   />
                 </Link>
@@ -353,20 +442,64 @@ function Navbar({ className }: { className?: string }) {
                       <span className="text-white">Work environment</span>
                     </HoveredLink>
 
-                    <HoveredLink href="/jobs" onClick={handleLinkClick}>
-                      <span className="text-white">Search all Jobs</span>
-                    </HoveredLink>
-
-                    <HoveredLink href="/contact" onClick={handleLinkClick}>
-                      <span className="text-white">Contact Us</span>
-                    </HoveredLink>
-                    <HoveredLink href="/faq" onClick={handleLinkClick}>
-                      <span className="text-white">FAQ</span>
-                    </HoveredLink>
-                  </div>
-                </MenuItem>
-              </Menu>
-            </div>
+                  />
+                </div>
+              </Link>
+              <MenuItem setActive={setActive} active={active} item="What we are">
+                <div className="flex flex-col space-y-4 py-4">
+                  <HoveredLink href="/courses" onClick={handleLinkClick}>
+                    Our organization
+                  </HoveredLink>
+                  <HoveredLink href="/leaders" onClick={handleLinkClick}>
+                    Leaders
+                  </HoveredLink>
+                  <HoveredLink href="/location" onClick={handleLinkClick}>
+                    Locations
+                  </HoveredLink>
+                  <HoveredLink href="/gallery" onClick={handleLinkClick}>
+                    Gallery
+                  </HoveredLink>
+                  <HoveredLink href="/events" onClick={handleLinkClick}>
+                    Events
+                  </HoveredLink>
+                  <HoveredLink href="/media" onClick={handleLinkClick}>
+                   News Room
+                  </HoveredLink>
+                  <HoveredLink href="/investor" onClick={handleLinkClick}>
+                    Investor Relations
+                  </HoveredLink>
+                </div>
+              </MenuItem>
+              <MenuItem setActive={setActive} active={active} item="Careers">
+                <div className="flex flex-col space-y-4 py-4">
+                
+                  <HoveredLink href="/" onClick={handleLinkClick}>
+                    Training & Internships
+                  </HoveredLink>
+                  <HoveredLink href="/careers" onClick={handleLinkClick}>
+                    Careers
+                  </HoveredLink>
+                  <HoveredLink href="/courses" onClick={handleLinkClick}>
+                    Training & Development
+                  </HoveredLink>
+                  <HoveredLink href="/experienceProf" onClick={handleLinkClick}>
+                    Experience Professionals
+                  </HoveredLink>
+                  <HoveredLink href="/worken" onClick={handleLinkClick}>
+                    Work environment
+                  </HoveredLink>
+                  <HoveredLink href="/jobs" onClick={handleLinkClick}>
+                    Search all Jobs
+                  </HoveredLink>
+                  <HoveredLink href="/contact" onClick={handleLinkClick}>
+                    Contact Us
+                  </HoveredLink>
+                  <HoveredLink href="/faq" onClick={handleLinkClick}>
+                    FAQ
+                  </HoveredLink>
+                </div>
+              </MenuItem>
+            </Menu>
           </div>
         )}
       </nav>

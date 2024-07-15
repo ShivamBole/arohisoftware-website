@@ -87,8 +87,8 @@ export default function Home() {
               About Arohi Software
             </h2>
             <h4 className="text-2xl font-semibold mb-6 text-black">
-              We are the intersection where digital engineering and tomorrow's
-              technologies meet today’s business aspirations, accelerating
+              We are the intersection where digital engineering and tomorrow`&apos;`s
+              technologies meet today`&apos;`s business aspirations`&#39;` accelerating
               enterprise future states.
             </h4>
             <p className="text-gray-600 mb-8">
