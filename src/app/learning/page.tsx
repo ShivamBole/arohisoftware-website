@@ -7,7 +7,7 @@ import LearningHero from "../components/LearningHero";
 import Services from "../components/ServiceList";
 import ReinventLearning from "../components/ReinventLearning";
 import LearningNavbar from "../components/LearningNavbar";
-import Partners from "../components/Partners";
+import OurPartners from "./../components/OurPartners";
 import Leaders from "../components/Leaders";
 import Feedform from "../components/Feedform";
 import CareersComponent from "../components/CareersComponent";
@@ -19,14 +19,14 @@ const App: React.FC = () => {
       {/* <Header /> */}
       <main className="pt-20">
         {/* <LearningNavbar /> */}
-        <div className="lg:px-12 py-10">
+        <div className="">
           <LearningNavbar />
           {/* <Services /> */}
           <ReinventLearning />
           <Traning />
 
           <Leaders />
-          <Partners />
+          <OurPartners />
           <CareersComponent />
           <Feedform title="Contact Us" />
         </div>

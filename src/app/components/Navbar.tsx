@@ -151,12 +151,13 @@ function Navbar({ className }: { className?: string }) {
 
               </Link>
 
+
               <MenuItem
                 setActive={setActive}
                 active={active}
                 item="What we are >"
               >
-                <div className="flex justify-around space-y-6 lg:space-x-10 p-10 rounded">
+                <div className="flex justify-around space-y-6 lg:space-x-10 p-10 pr-10 rounded">
                   <div className="flex flex-col space-y-4 ">
                     <p className="mb-2 text-xl text-slate-400 hover:text-yellow-400 hover:cursor-pointer">
                       About Arohi Software <span>➡️</span>

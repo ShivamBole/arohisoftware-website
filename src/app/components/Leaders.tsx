@@ -1,43 +1,32 @@
 import React from 'react';
 import Image from 'next/image';
-
+// import sakshi from "./../../../public"
 const leaders = [
   {
-    name: ' Sanket Ghodake',
-    title: 'Chief Strategy Officer',
-    imgSrc: 'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
-    // linkedIn: 'https://www.linkedin.com/in/drbhaskargosh',
-  },
-  {
-    name: 'Poonam Dogole',
-    title: 'Chief Strategy Officer',
-    imgSrc: 'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
+    name: ' Sakshi pachpute',
+    title: 'Team leader ',
+    imgSrc: '/assets/Leaders/sakshi.jpg',
     linkedIn: 'https://www.linkedin.com/in/drbhaskargosh',
   },
   {
-    name: 'Dr. Bhaskar Ghosh',
-    title: 'Chief Strategy Officer',
-    imgSrc: 'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
-    linkedIn: 'https://www.linkedin.com/in/drbhaskargosh',
+    name: 'Dhanashree Bhoyate',
+    title: 'Full Stack Developer',
+    imgSrc: '/assets/Leaders/Danshree.jpg',
+    linkedIn: 'https://www.linkedin.com/in/dhanshree-bhoyate-67023a305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
   },
   {
-    name: 'Dr. Bhaskar Ghosh',
-    title: 'Chief Strategy Officer',
-    imgSrc: 'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
-    linkedIn: 'https://www.linkedin.com/in/drbhaskargosh',
+    name: 'Kiran Madage',
+    title: 'Full Stack Developer',
+    imgSrc: '/assets/Leaders/Kiran.jpg',
+    linkedIn: 'https://www.linkedin.com/in/kiran-madage-9a26402b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
   },
   {
-    name: 'Dr. Bhaskar Ghosh',
-    title: 'Chief Strategy Officer',
-    imgSrc: 'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
-    linkedIn: 'https://www.linkedin.com/in/drbhaskargosh',
+    name: 'Aniket Supekar',
+    title: 'Ui & ux developer',
+    imgSrc: '/assets/Leaders/aniket.jpg',
+    linkedIn: 'https://www.linkedin.com/in/aniket-supekar-3545812b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
   },
-  {
-    name: 'Dr. Bhaskar Ghosh',
-    title: 'Chief Strategy Officer',
-    imgSrc: 'https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=',
-    linkedIn: 'https://www.linkedin.com/in/drbhaskargosh',
-  }
+ 
   
 
   // Add other leaders here...
