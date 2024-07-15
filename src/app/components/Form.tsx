@@ -149,7 +149,7 @@ export function SignupForm() {
           </form>
         </div>
       </div>
-    </div>
+    
   );
 }
 
